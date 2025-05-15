@@ -6,7 +6,7 @@
     
     public function __construct() {
         $this->array_capacity = 1;
-        $this->array_size = -1;
+        $this->array_size = 0;
         $this->last_item_index = -1;
         $this->augment_array_size();
     }
@@ -86,6 +86,10 @@
 
     public function is_empty() {
         return ($this->array_size === 0);
+    }
+
+    public function size() {
+        return $this->array_size;
     }
     
     /* Helper function to find the last non null value in the array */

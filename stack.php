@@ -19,17 +19,15 @@
             $this->stack_array[--$this->stack_size] = NULL;
             return $last_value;
         }
-        throw new Exception('Stack is empty.');
     }
 
     /* Preview of last element on the stack */
     /* Returns the last element of the stack */
 
     public function peek() {
-        if ($this->stack_size) {
+        if (!$this->is_empty()) {
             return $this->stack_array[$this->stack_size - 1];
         }
-        throw new Exception('Stack is empty.');
     }
 
     /* Returns number of element on the stack */
@@ -42,5 +40,9 @@
 
     public function is_empty(): bool {
         return ($this->stack_size === 0);
+    }
+    
+    public function get_array() {
+        return $this->stack_array;
     }
 } ?>
